@@ -1,0 +1,58 @@
+textbook: The Linux Programming Interface (see email for link to discounted
+version). Recommends either hardcopy or ebook, no particular preferance. 
+
+Lecture materials will be posted online, recorded ecampus lectures. Class will
+be mostly a dialogue. Lectures are SUPPLEMENT to textbook -- it does a
+phenomenal job explaining the concepts; it's the canonical text for this
+subject matter (prev was Stevens, advanced programming unix environment,
+author died in 1999). 2 additional posix standards since old text, and we'll
+be writing mostly to posix standard. 
+
+book explains how to program linux environment w/ system calls etc.; use other
+resources for how to get Make. Book not available on course reserve, and will
+be useful to any programming or sysadmin-related job later. 
+
+Everything run through course website; video lecture links will show up on
+class site. Most are ~15 mins. Watch lecture, then read textbook, then rewatch
+lecture -- they're all pretty short. Majority of information necessary for
+passing class is in the textbook -- lectures are just the high points.
+Readings posted are due *that day* -- class discussions will assume that
+you've read the section and watched the lecture. 
+
+q: timeline for posting lectures
+a: first half should be posted by this afternoon -- don't recommend watching
+them out of order, but that's up to you
+
+LaTeX introduction is in-class since ecampus doesn't use TeX
+
+class is scheduled monday-friday but no class fridays because nobody wants to
+show up. regular class gets 30 lectures; we get 32 even with fridays off (40
+lectures is almost a semester, liek 15-week term, in 8 weeks). 3-day weekend
+for this class. 
+
+class every other thursday -- every even week, starting week 2 -- there's a quiz,
+and those are the assessments. No exams, final is take-home. 
+
+proj due dates based on when material is covered, and will be adjusted if
+schedule changes. But there *will* be 5 assignments. 
+
+"if I find your code for this class on a public GitHub account, ever, I'm
+failing you or writing you up for cheating". ...what about BitBucket?
+
+2nd assignment allegedly hardest in class. 
+
+quiz questions are usually SECTION TITLES FROM BOOK...
+
+"I like to ask questions where the answers are bolded in the text for you". 
+
+4 quizzes
+
+os-class.engr.oregonstate.edu -- on-campus or VPN
+
+AMS TeX, J Tex, etc. okay rather than LaTeX. Makefile and example will be
+provided for LaTeX. No LyX allowed
+
+"any time the output says do not edit by hand, this should indicate to you
+that the tool was a poor choice"
+
+posix: Portable Operating Systems Interface X

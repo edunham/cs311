@@ -1,0 +1,49 @@
+Summer 2012: 
+1. Describe the process of installing a signal handler using sigaction,
+including any specific
+issues that need to be considered.
+2. What is a signal?
+3. Signals can be handled in 3 ways. Name them. What constants are defined for
+your use in
+setting these actions?
+4. What is the difference between a pipe and a FIFO?
+5. Give the general idiom for creating a pipe between a parent and a child:
+the parent will write,
+the child will read.
+6. Each of the exec functions have a suffix of some combination of l, p, e,
+and v. What does
+each of these letters imply?
+7. What is the difference between exit() and exit()?
+8. Consider the current project. Give pseudocode describing the structure of
+the system.
+
+Fall 2012: 
+
+1. Describe the difference between pipes and FIFOs.
+2. Give the general structure for code that uses pipes to communicate from a
+parent to a child.
+3. What is the process for binding a pipe to a process’s standard input?
+4. Describe the purpose of popen, and explain why it wouldn’t actually work
+for the current
+project.5. What is the prefix for all of the standard threading function
+calls?
+6. What flag must be passed to the compiler to use threading?
+7. Describe two advantages and 2 disadvantage of threading over using multiple
+processes.
+8. Describe the return values of the threading functions.
+
+Winter 2013:
+
+1. What...is your name?
+2. What...is your quest?
+3. What...is your favorite color?
+4. Why is a raven like a writing desk?
+5. In which cup was the poison during the Battle of Wits?
+6. What vow is Wesley willing to accept from Inigo?
+7. What does it mean to “blave”?
+8. Why does the miracle pill have a chocolate coating?
+9. Would you take the red pill, or the blue pill?
+10. What is the difference between half a bakers dozen and a bakers half
+dozen?
+11. If a chicken and a half can lay an egg and a half in a day and a half, how
+long would it take 10 chickens to lay 10 eggs?

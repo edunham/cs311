@@ -1,0 +1,17 @@
+Summer & Fall 2012:
+1. Describe 3 UNIX commands, other than ls, cd, rm, mv, cp, mkdir, rmdir.
+2. What section of the man pages describes the system calls?
+3. What is a pipeline, in the context of UNIX? Give an example.
+4. What is make, and how is it used to aid in programming?
+5. How does one invoke the debugger from the command line?
+6. What is the concept of conditional compilation, and how is it done?
+7. What compiler should be used for this class?
+8. What languages are usable in this class?
+
+Winter 2013: 
+1. In LaTeX, what are environments?
+2. What is the server that must be used for this class?
+3. What variable in python holds command line arguments?
+4. In what ways can strings be expressed in python?
+5. How does one get a bulleted list in LaTeX?
+6. What is the python equivalent of “Hello, World!”?

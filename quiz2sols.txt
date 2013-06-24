@@ -1,0 +1,50 @@
+Summer 2012:
+
+1. Write a python function that calculates the difference between the sum of
+the squares and the
+square of the sums for a range from 1 to a max value.
+2. What module allows interaction with the shell?
+3. Where are command line arguments stored in python?
+
+Fall 2012: 
+
+1. Describe the difference between the stat and lstat system calls.
+    lstat does not follow symbolic links, returning stat info on the link itself.
+2. How would one resize a file in C?
+    truncate or frtuncate
+3. What system call is used to change the time stamp on a file?
+    utime or utimes
+4. What is scatter-gather I/O, and what system calls allow it to be performed?
+    read to or writing from multiple buffers. writev and readv
+5. What is a umask, and what system call allows for its retrieval?
+    umask returns it, and it is the mask on the mode of newly created files
+6. What system calls allow for duplication of a file descriptor?
+    dup, dup2, etc.
+7. How can broken down time be converted to a user formatter time string?
+    strftime
+8. What does it mean for an operation to be atomic?
+    The operation either completely succeeds or completely fails. There is no in
+    between.
+
+Winter 2013: 
+
+1. Draw the OS stack, as described in class.
+    4 layers, from the bottom: os kernel, syscalls, libraries, applications
+2. What is a kernel, in the context of an operating system?
+    It is the operating system. The core piece, hardware arbiter, etc.
+3. Explain the concept of the universality of I/O.
+    Everything in UNIX is a file
+4. Each process has 4 general memory segments. What are they?
+    text, data, heap, stack
+5. What is the /proc filesystem?
+    virtual file system interface to kernel data structures
+6. What is a system call?
+    A request to the kernel for it to do something
+7. What is a feature test macro?
+    A preprocessor directive that determines the visibility of symbols in headers
+8. What are some issues related to portability?
+    struct ordering, endianness, standards compiance
+9. In python, for what is the os module used?
+    Operating system independent access to operating system functionality
+10. In python, give an example of why the subprocess module is useful.
+    Gaining access to the entirety of UNIX as “function calls”

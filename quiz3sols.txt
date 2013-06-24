@@ -1,0 +1,56 @@
+Summer 2012: 
+
+1. Describe the difference between the stat and lstat system calls.
+2. The stat struct has a member blksize t st blksize. What is it used for?
+3. What system call is used to change the time stamp on a file?
+4. What system call allows retrieval of the current time, including DST
+status?
+5. What is a umask, and what system call allows for its retrieval?
+6. Describe broken down time.
+7. How can broken down time be converted to a user formatter time string?
+8. How is the return value of the times system call converted to seconds?
+
+Fall 2012: 
+
+1. How is the return value of the times system call converted to seconds?
+2. What system call allows retrieval of the system time, including DST status?
+3. What system call is used to change the timestamp on a file?
+4. Describe the process of installing a signal handler using sigaction,
+including any specific issues that need to be considered.5. What is a signal?
+6. Signals can be handled in 3 ways. Name them. What constants are defined for
+your use in setting these actions?
+7. How does on create new processes in Linux?
+8. Each of the exec library functions have a suffix of some combination of l,
+p, c, and v. What does each of these letters imply?
+
+Winter 2013:
+
+1. What does the O CREAT flag mean when passed as part of the flags to a call
+to open?
+    creates the file if it doesn’t exist
+2. Describe the concept of scatter/gather I/O. How does one perform such I/O
+in C?
+    data to/from multiple buffers in memory
+3. The third argument for lseek is whence. What values can this parameter take
+on, and what does each mean?
+    SEEK SET, SEEK CUR, SEEK END, from start, from current, from end,
+    respectively.
+4. One of three values must always be present in the open() flags parameter.
+What are they?
+    O RDONLY, O WRONLY, O RDWR
+5. What is a file descriptor, and how are they assigned?
+    a non-negative integer corresponding to an opened file, lowest available
+    number is used
+6. Give the outline of a read/write loop that will copy a file. Don’t worry
+about the arguments.
+    while((num read = read(...)) != 0) write(...);
+7. What happens to a file opened in write mode, if the file already exists?
+    truncation
+8. How can a file be opened such that we begin writing at the current end of
+the file?
+    adding O APPEND
+9. What are file holes, and how are they created?
+    completely empty regions of file, can be created via lseek.
+10. Describe the concept of atomicity.
+    Totally done, or not at all, can’t be interrupted.
+
