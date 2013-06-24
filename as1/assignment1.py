@@ -1,6 +1,7 @@
 #! /usr/bin/env python2.7
 import sys
 import os
+from operator import mul
 
 # hardcode the 1,000-digit number required for exercise 2
 n  = """
@@ -27,10 +28,26 @@ n  = """
 """
 
 def prob1():
-    pass
+    """
+    Write a python script that creates the following directories for a given term
+    and course:
+        assignments
+        examples
+        exams
+        lecture_notes
+        submissions
+    Also create a symbolic link to
+    /usr/local/classes/eecs/<term>/<class>/public_html called 'website', and a
+    link to /usr/local/classes/eecs/<term>/<class>/handin called 'handin'.
+
+    It is your responsibility to ensure that you don't attempt to create a
+    directory that already exists. Make use of the os, sys, and getopt modules,
+    with both short and long form options for term and course.
+    """
 
 def prob2():
-    pass
+    # Find the greatest product of five consecutive digits in the 1000-digit number.
+    return max(reduce(mul, n[i:i + 5], 1) for i in range(len(n) - 4))
 
 def prob3():
     pass
