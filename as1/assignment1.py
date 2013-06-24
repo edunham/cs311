@@ -27,7 +27,7 @@ n  = """
 71636269561882670428252483600823257530420752963450
 """
 
-def prob1():
+def prob1(term, course):
     """
     Write a python script that creates the following directories for a given term
     and course:
@@ -44,7 +44,28 @@ def prob1():
     directory that already exists. Make use of the os, sys, and getopt modules,
     with both short and long form options for term and course.
     """
+    prefix = term + "/" + course + "/"
 
+    dirs = ["assignments", "examples", "exams", "lecture_notes", "submissions"]
+    paths = [prefix + d for d in dirs]
+
+    symlink_source = "/usr/local/classes/eecs/" + prefix + "public_html"
+    symlink_name = prefix + "website"
+
+    link_source = "/usr/local/classes/eecs/" + prefix + "handin"
+    link_name = prefix + "handin"
+
+    paths.append(symlink_source)
+    paths.append(link_source)
+
+    for p in paths:
+        if not os.path.exists(p):
+            # create all dirs recursively, becuause of link and symlink in paths
+            os.mkdirs(p)
+    if not os.path.exists(prefix + symlink_name):
+        os.symlink(symlink_source, symlink_name)
+    if not os.path.exists(prefix + link_name):
+        os.link(link_source, link_name)
 def prob2():
     # Find the greatest product of five consecutive digits in the 1000-digit number.
     return max(reduce(mul, n[i:i + 5], 1) for i in range(len(n) - 4))
