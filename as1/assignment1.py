@@ -66,15 +66,35 @@ def prob1(term, course):
         os.symlink(symlink_source, symlink_name)
     if not os.path.exists(prefix + link_name):
         os.link(link_source, link_name)
+
 def prob2():
     # Find the greatest product of five consecutive digits in the 1000-digit number.
     return max(reduce(mul, n[i:i + 5], 1) for i in range(len(n) - 4))
 
 def prob3():
-    pass
+    """
+    Using names.txt, a 46K text file containing over five-thousand first names,
+    begin by sorting it into alphabetical order. Then working out the alphabetical
+    value for each name, multiply this value by its alphabetical position in the
+    list to obtain a name score. For example, when the list is sorted into
+    alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the
+    938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+    What is the total of all the name scores in the file? See the posted examples
+    for how to work with a file. For this, A = 1, B = 2, etc. 
+    """
 
 def prob4():
-    pass
+    """
+    The nth term of the sequence of triangle numbers is given by, tn = ½ n (n+1);
+    so the first ten triangle numbers are:
+    1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+    By converting each letter in a word to a number corresponding to its
+    alphabetical position and adding these values we form a word value. For
+    example, the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value
+    is a triangle number then we shall call the word a triangle word. Using
+    words.txt, a 16K text file containing nearly two-thousand common English
+    words, how many are triangle words? 
+    """
     
 def main():
     pass
