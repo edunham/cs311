@@ -1,14 +1,14 @@
 \documentclass[10pt]{article}
 \title{CS311 Assignment 1}
 \author{Emily Dunham}
-\date{}
+\date{7/1/2013}
 \def\name{Emily Dunham}
 
 \begin{document}
 
 \maketitle
 
-\section{1. Describe at least 2 ways of transferring files from a remote
+\section{Describe at least 2 ways of transferring files from a remote
 server to a local machine.} 
 
 \begin{itemize}
@@ -29,7 +29,7 @@ version control such as Git or even Subversion
 
 \end{itemize}
 
-\section{2. What are revision control systems? Why are they useful?}
+\section{What are revision control systems? Why are they useful?}
 
 Revision control systems are a way to track changes in source code and
 facilitate collaboration between multiple contributors. Modern revision
@@ -41,7 +41,7 @@ when, or manually merging changes by multiple contributors to the same file.
 They're also a convenient way to revert a project to any past state in which
 you remembered to commit.
 
-\section{3. What is the difference between redirecting and piping? Describe each.}
+\section{What is the difference between redirecting and piping? Describe each.}
 
 A pipe passes the output of a program to a second program as its input. For
 instance, if I want to grep the file command's man page to find the answer to
@@ -52,18 +52,38 @@ Redirecting is how you change where the output of a program gets written. If I h
 a program that usually writes its output to the terminal and  I want to record
 that output, I'd redirect it into a file: "./myprogram > myprogramlog.txt"
 
-\section{4. What is make, and how is it useful?}
+\section{What is make, and how is it useful?}
 
 Make is the GNU utility for maintaining groups of programs. It's useful
 because it automatically determines what parts of a program need to be
 recompiled and recompiles them without wasting time on stuff that didn't need
 to be recompiled. 
 
-\section{5. Describe, in detail, the syntax of a make file.}
+\section{Describe, in detail, the syntax of a make file.}
 
+From http://www.gnu.org/software/make/manual/make.html: 
 
+\begin{verbatim}
+A simple makefile consists of “rules” with the following shape:
 
-\section{6. Give a find command that will run the file command on every regular file (not
+     target ... : prerequisites ...
+             recipe
+             ...
+             ...
+\end{verbatim}
+
+The target is the file, such as an executable or an object, which will be the
+output when make is run on this rule. Prerequisites is the list of
+dependencies which will be required to create the target. The recipe
+absolutely must have each line start with a tab character unless you change
+.RECIPEPREFIX, because Make is special. If you get the recipe right, it'll
+contain a list of the commands that need to be done to the prerequisites to
+result in the target. 
+
+Additionally, makefiles usually have a 'clean' target, with no prerquisites
+and a recipe that removes all of the .o and other unneeded files. 
+
+\section{Give a find command that will run the file command on every regular file (not
 directories!) within the current filesystem subtree.}
 
 Verbatim from the man page:

@@ -19,3 +19,18 @@ clean:
 	rm *.log
 	rm *.dvi
 	rm *.ps
+
+CC = icc
+CFLAGS = -Wall -std=c99 -openmp -O3 -g -I.
+CTARGET = sieve
+
+SOURCE = eratosthenes.c
+
+default:    compile
+
+compile: ${SOURCE}
+	${CC} ${CFLAGS} ${SOURCE} -o ${CTARGET} ${LDFLAGS}
+
+debug: ${SOURCE} ${INCLUDES}
+	${CC} ${CFLAGS} ${SOURCE} -o ${CTARGET} ${LDFLAGS} -DDEBUG
+
