@@ -107,7 +107,7 @@ def prob1(term, course):
     for p in paths:
         if not os.path.exists(p):
             # create all dirs recursively, becuause of link and symlink in paths
-            os.mkdirs(p)
+            os.makedirs(p)
     if not os.path.exists(prefix + symlink_name):
         os.symlink(symlink_source, symlink_name)
     if not os.path.exists(prefix + link_name):
@@ -181,7 +181,8 @@ def main():
         sys.exit(2)
     for o, a in opts:
         if o == "-1":
-            prob1(a[0], a[1])
+            print a
+            prob1(args[0], args[1])
         elif o == "-2":
             print prob2()
         elif o == "-3":
