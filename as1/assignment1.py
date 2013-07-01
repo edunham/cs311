@@ -117,6 +117,12 @@ def prob2():
     # Find the greatest product of five consecutive digits in the 1000-digit number.
     return reduce(mul, (max(reduce(mul, (n[i:i + 5], 1)) for i in range(len(n) - 4))))
 
+def mult_score(word):
+    score = 1 
+    for c in word:
+        score = score * ord(c) - 64
+    return score
+
 def prob3():
     """
     Using names.txt, a 46K text file containing over five-thousand first names,
@@ -128,6 +134,15 @@ def prob3():
     What is the total of all the name scores in the file? See the posted examples
     for how to work with a file. For this, A = 1, B = 2, etc. 
     """
+    total = 0
+    names = open('names.txt', 'r')
+    for n in names.read().split(','):
+        total += mult_score(n.strip('"'))
+    names.close()
+    return total 
+
+
+
 def score(word):
     # assuming uppercase, since all the names are
     score = 0
