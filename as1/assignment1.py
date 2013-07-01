@@ -2,7 +2,6 @@
 import sys
 import getopt
 import os
-from operator import mul
 
 # hardcode the 1,000-digit number required for exercise 2
 n  =[7, 3, 1, 6, 7, 1, 7, 6, 5, 3, 1, 3, 3, 0,
@@ -115,7 +114,8 @@ def prob1(term, course):
 
 def prob2():
     # Find the greatest product of five consecutive digits in the 1000-digit number.
-    return reduce(mul, (max(reduce(mul, (n[i:i + 5], 1)) for i in range(len(n) - 4))))
+     return max(reduce(lambda x, y: x * y, n[i:i + 5]) for i in range(len(n) - 4))
+    
 
 def mult_score(word):
     score = 1 
@@ -163,12 +163,12 @@ def prob4():
     words, how many are triangle words? 
     """
     triangles = [sum(range(1, n+1)) for n in range(50)]    
-    names = open('names.txt', 'r')
+    words = open('words.txt', 'r')
     hits = []
-    for n in names.read().split(','):
+    for n in words.read().split(','):
         if score(n.strip('"')) in triangles:
             hits.append(n)
-    names.close()
+    words.close()
     return len(hits)
 
 def main():
