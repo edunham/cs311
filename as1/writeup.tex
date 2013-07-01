@@ -11,19 +11,53 @@
 \section{1. Describe at least 2 ways of transferring files from a remote
 server to a local machine.} 
 
+\begin{itemize}
 
+\item If the server is exposing the files on the web, use wget
+
+\item If you have account credentials on the server and just want to move a
+couple files, use scp
+
+\item If you want an interactive environment for moving files back and forth,
+use sftp
+
+\item If they're files that you'll want to transfer over frequently, such as
+backups, consider rsync
+
+\item If the files are a project you're developing, please please PLEASE use
+version control such as Git or even Subversion
+
+\end{itemize}
 
 \section{2. What are revision control systems? Why are they useful?}
 
+Revision control systems are a way to track changes in source code and
+facilitate collaboration between multiple contributors. Modern revision
+control systems support branching, merging, and patches. 
 
+They are useful because without them, multi-person projects would get bogged
+down by the overhead of either deciding who's allowed to modify which files
+when, or manually merging changes by multiple contributors to the same file.
+They're also a convenient way to revert a project to any past state in which
+you remembered to commit.
 
 \section{3. What is the difference between redirecting and piping? Describe each.}
 
+A pipe passes the output of a program to a second program as its input. For
+instance, if I want to grep the file command's man page to find the answer to
+question 6, I'd pipe "man file" into "grep \$word" with a word that I think
+will be in the answer. 
 
+Redirecting is how you change where the output of a program gets written. If I have
+a program that usually writes its output to the terminal and  I want to record
+that output, I'd redirect it into a file: "./myprogram > myprogramlog.txt"
 
 \section{4. What is make, and how is it useful?}
 
-
+Make is the GNU utility for maintaining groups of programs. It's useful
+because it automatically determines what parts of a program need to be
+recompiled and recompiles them without wasting time on stuff that didn't need
+to be recompiled. 
 
 \section{5. Describe, in detail, the syntax of a make file.}
 
@@ -32,5 +66,18 @@ server to a local machine.}
 \section{6. Give a find command that will run the file command on every regular file (not
 directories!) within the current filesystem subtree.}
 
+Verbatim from the man page:
+
+\begin{verbatim}
+       find . -type f -exec file '{}' \;
+
+       Runs `file' on every file in or below the current directory.  Notice
+that the braces are enclosed  in
+       single quote marks to protect them from interpretation as shell script
+punctuation.  The semicolon is
+       similarly protected by the use of a backslash, though single quotes
+could have been used in that case
+       also.
+\end{verbatim}
 
 \end{document}
