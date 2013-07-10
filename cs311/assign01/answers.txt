@@ -1,0 +1,45 @@
+Emily Dunham
+10/1/2012
+
+1) If the files are hosted on the web, use wget <url> to download them to the
+local machine.
+To securely copy a single file, use 
+scp <filename> <user>@<host>:path/to/where/you/want/the/file.
+To securely transfer an arbitrary number of files, use sftp <host>, then 
+log in, and type get <files or regex>. 
+The simplest transfer is ftp, which can transfer an arbitrary number of 
+files and is unencrypted. 
+
+2) Revision control, commonly known as version control, is a technique or 
+program for managing changes to some document or source code. When a team of 
+people is working together on a software project, revision control allows them
+to work in parallel and then merge their changes, rather than having to take 
+turns modifying the code base. Revision control is also useful because it 
+allows you to track the changes which have been made to a project and 
+selectively revert them. 
+
+3) Piping sends the output to a program, whereas redirecting sends the output
+to a file. For instance, A|B will take the output of command A and send it to
+program B (for instance, cat file.txt | grep "foo" will show all the instances
+of foo in file.txt), whereas A>B will write the output of command A into a file
+named B (for instance, you could copy the contents of file A to B with cat A >
+B).
+
+4) Make is a magical utility that keeps you from having to recompile code 
+unnecessarily. You tell your makefile exactly how each part of your program 
+should be compiled, and which parts of the program rely on which others. Make
+is useful because big projects take an extremely long time to compile 
+(Android takes over 2 hours to compile from scratch on good hardware, for 
+example), and so it's much more efficient to only recompile the parts that 
+you've changed. 
+
+5) A makefile starts with permanent definitions of constants relevant to the 
+environment, such as which compiler and flags should be used. A makefile can 
+provide rules for many different targets, such as 'all' and 'clean'. The 
+format for each rule is:
+ <target> : <files required>
+	<commands>
+The commands must each be preceded by a tab so that Make knows to execute them.  
+6) Give a find command that will run the file command on every regular file (not directories!) within the current filesystem subtree.
+$ file | find . -type f 
+

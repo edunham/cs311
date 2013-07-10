@@ -1,0 +1,83 @@
+\documentclass[letterpaper,10pt,titlepage]{article}
+
+\usepackage{graphicx}                                        
+
+\usepackage{amssymb}                                         
+\usepackage{amsmath}                                         
+\usepackage{amsthm}                                          
+
+\usepackage{alltt}                                           
+\usepackage{float}
+\usepackage{color}
+
+\usepackage{url}
+
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=9in, textwidth=6.5in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\usepackage{hyperref}
+
+
+%pull in the necessary preamble matter for pygments output
+\input{pygments.tex}
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {Emily Dunham},
+  pdfkeywords = {cs311 ``operating systems'' files filesystem I/O},
+  pdftitle = {CS 311 Project 3: UNIX File I/O},
+  pdfsubject = {Emily Dunham CS 311 Project 3},
+  pdfpagemode = UseNone
+}
+
+\parindent = 0.0 in
+\parskip = 0.2 in
+
+\begin{document}
+\tableofcontents
+
+\section{Part 1: System Design}
+
+I planned to work directly from the project instructions, creating a main function to parse user input and then one function per major command. 
+
+\section{Part 2: Work Log}
+
+Due to being overcommitted with various responsibilities this term and afraid of the assignment, I didn't begin  work on the project until Sunday 10/22. On Sunday and Monday, I got the program to the point of being able to parse all necessary user inputs and execute the correct functions. 
+
+I then invoked my grace day because I had a midterm early in the morning on 10/23, and didn't want to fail more than one class this term. After the midterm, I proceeded to attempt to implement the functions for the archiver's various use cases, but my plans were thwarted by an inability to comprehend file I/O. 
+
+After determing that it would be impossible for me to get my program entirely working even with the use of a second grace day, I verified that it at least compiles on os-class in order to hopefully achieve a non-zero score, and then submitted it.
+
+
+\section{Part 3: Challenges}
+
+The biggest challenge I faced was the fact that I am verifyably stupid: despite having all of the necessary information and  documentation at my disposal, I was unable to create a working archiver program. Additionally, I was humiliated by the prospect of admitting the extent of my stupidity to anyone, so I attemped to do my own work rather than getting help. 
+
+Another  challenge was the fact that Kevin's provided \LaTeX makefile doesn't actually work, and throws such a generic error that troubleshooting the exact cause of the problem is nearly impossible. 
+
+\section{Part 4: Question-Answers}
+
+(a) The main point of the assignment is to encourage us to learn about file I/O, with a secondary purpose about time management for completing large projects. 
+
+(b) I did not ensure my solution's correctness, because I did not complete a working solution for the assignment. 
+
+(c) I learned that I do not have the basic skills required for a successful career in software development. 
+
+%input the pygmentized output of mt19937ar.c, using a (hopefully) unique name
+%this file only exists at compile time. Feel free to change that.
+\input{__foo.py.tex}
+\end{document}
+
