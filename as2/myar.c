@@ -11,22 +11,11 @@
 
 #include <stdio.h>
 #include <dirent.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <ar.h>
-#define  ARMAG   "!<arch>\n"	 /* magic string */
-#define  SARMAG   8		 /* length of magic string */
-
-#define  ARFMAG   "`\n"	 /* header trailer string */
-
- struct  ar_hdr 		 /* file member header */
- {
-     char    ar_name[16];	 /* '/' terminated file member name */
-     char    ar_date[12];	 /* file member date */
-     char    ar_uid[6]		 /* file member user identification */
-     char    ar_gid[6]		 /* file member group identification */
-     char    ar_mode[8] 	 /* file member mode (octal) */
-     char    ar_size[10];	 /* file member size */
-     char    ar_fmag[2];	 /* header trailer string */
- };
+#define HEADER_BYTES 60 // Size of struct ar_hdr
 
 void  usage(){
     printf("Myar.c, written by Emily Dunham, October 2012\n");
@@ -100,11 +89,49 @@ int xtract(char *ark, char *file){
     
     return 0;
 }
+
 int print(char *ark, int v){
+    // ssize_t read(int fd, void *buf, size_t count);
+    int fd = open(ark, O_RDONLY);
+    if (fd < 0){
+        perror("Couldn't open archive file");
+        exit(-1);
+    }
+    char armag_buf[SARMAG];
+    int numRead = read(fd, armag_buf, SARMAG);
+    while (numRead < SARMAG){
+        printf("didn't read enough; continuing to try\n");
+        numRead += read(fd, armag_buf + numRead, SARMAG - numRead); 
+        if (numRead == -1)
+            perror("read failed");
+            exit(-1);
+    }
+    char name[16];
+    char date[12];
+    char uid[6];
+    char gid[6];
+    char mode[8];
+    char size[10];
+    char fmag[2];
+
+    while (1){
+        if (read(fd, name, 16) == -1 || read(fd, date, 12) == -1 ||
+            read(fd, uid, 6) == -1 || read(fd, gid, 6) == -1 || read(fd, mode, 8) == -1 ||
+            read(fd, size, 10) == -1 || read(fd, fmag, 2) == -1)
+            return 1; 
+        if (!v){
+            printf("%s\n", name);
+        }
+        else{
+            printf("%s %s/%s\t%s %s", mode, uid, gid, date, name);
+        }
+        //long int strtol(const char *nptr, char **endptr, int base)
+        lseek(fd, strtol(size, NULL, 10), SEEK_CUR);
+    }
     return 0;
+	
 }
 int rm(char *ark, char *file){
-
     return 0;
 }
 
@@ -121,10 +148,11 @@ int main (int argc, char **argv){
             xtract(argv[2], argv[3]);
             break;
         case 't':
-            print(argv[2], 0);
-            break;
-        case 'v':
-            print(argv[2], 1);
+            if (argv[2][1] == 'v'){
+                print(argv[3], 1);
+            }
+            else
+                print(argv[2], 0);
             break;
         case 'd':
             rm(argv[2], argv[3]);
