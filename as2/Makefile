@@ -15,7 +15,6 @@ pdf: ps
 
 clean:
 	rm *.aux
-	rm *.out
 	rm *.log
 	rm *.dvi
 	rm *.ps
